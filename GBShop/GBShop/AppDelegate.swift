@@ -25,7 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        
+        let signUp = requestFactory.makeSignUpRequestFatory()
+        signUp.signUp(id: "1", username: "Test", password: "Testov", email: "a@b.com", gender: "m", creditCard: "123", bio: "Fake") {response in
+            switch response.result {
+            case .success(let message):
+                print(message)
+            case .failure(let error):
+                print(error.errorDescription)
+            }
+        }
         return true
     }
 
