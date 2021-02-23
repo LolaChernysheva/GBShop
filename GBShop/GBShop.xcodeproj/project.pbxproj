@@ -29,6 +29,13 @@
 		D36879F525DC014A00E6829D /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36879F325DC014A00E6829D /* LoginResult.swift */; };
 		D36879F925DC0A2400E6829D /* SignUpRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36879F825DC0A2400E6829D /* SignUpRequestFactory.swift */; };
 		D36879FB25DC0A3500E6829D /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36879FA25DC0A3500E6829D /* SignUp.swift */; };
+		D3C2B60325E54473000C1C90 /* LogOutRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2B60225E54473000C1C90 /* LogOutRequestFactory.swift */; };
+		D3C2B60525E5447D000C1C90 /* LogOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2B60425E5447D000C1C90 /* LogOut.swift */; };
+		D3C2B60725E5449D000C1C90 /* ChangeUserDataRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2B60625E5449D000C1C90 /* ChangeUserDataRequestFactory.swift */; };
+		D3C2B60925E544A6000C1C90 /* ChangeUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2B60825E544A6000C1C90 /* ChangeUserData.swift */; };
+		D3C2B60B25E55074000C1C90 /* LogOutResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2B60A25E55074000C1C90 /* LogOutResult.swift */; };
+		D3C2B60D25E5508A000C1C90 /* ChangeUserDataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2B60C25E5508A000C1C90 /* ChangeUserDataResult.swift */; };
+		D3C2B60F25E557C4000C1C90 /* SignUpResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2B60E25E557C4000C1C90 /* SignUpResult.swift */; };
 		D7B7A106F718A4FB1B4E921B /* Pods_GBShop_GBShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5073B609BD627246ABA27D5 /* Pods_GBShop_GBShopUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +91,13 @@
 		D36879F325DC014A00E6829D /* LoginResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
 		D36879F825DC0A2400E6829D /* SignUpRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequestFactory.swift; sourceTree = "<group>"; };
 		D36879FA25DC0A3500E6829D /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		D3C2B60225E54473000C1C90 /* LogOutRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutRequestFactory.swift; sourceTree = "<group>"; };
+		D3C2B60425E5447D000C1C90 /* LogOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOut.swift; sourceTree = "<group>"; };
+		D3C2B60625E5449D000C1C90 /* ChangeUserDataRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserDataRequestFactory.swift; sourceTree = "<group>"; };
+		D3C2B60825E544A6000C1C90 /* ChangeUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserData.swift; sourceTree = "<group>"; };
+		D3C2B60A25E55074000C1C90 /* LogOutResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutResult.swift; sourceTree = "<group>"; };
+		D3C2B60C25E5508A000C1C90 /* ChangeUserDataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserDataResult.swift; sourceTree = "<group>"; };
+		D3C2B60E25E557C4000C1C90 /* SignUpResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResult.swift; sourceTree = "<group>"; };
 		E3C990D38C45C5BD6556E952 /* Pods-GBShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShop.release.xcconfig"; path = "Target Support Files/Pods-GBShop/Pods-GBShop.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,6 +238,9 @@
 			children = (
 				D36879F325DC014A00E6829D /* LoginResult.swift */,
 				D36879F225DC014A00E6829D /* User.swift */,
+				D3C2B60A25E55074000C1C90 /* LogOutResult.swift */,
+				D3C2B60C25E5508A000C1C90 /* ChangeUserDataResult.swift */,
+				D3C2B60E25E557C4000C1C90 /* SignUpResult.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -265,6 +282,8 @@
 		D36879EB25DC013D00E6829D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				D3C2B60125E54428000C1C90 /* ChangeUserData */,
+				D3C2B60025E54327000C1C90 /* LogOut */,
 				D36879F725DC09D500E6829D /* SignUp */,
 				D36879F625DC090E00E6829D /* Auth */,
 				D36879ED25DC013D00E6829D /* RequestFactory.swift */,
@@ -288,6 +307,24 @@
 				D36879FA25DC0A3500E6829D /* SignUp.swift */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		D3C2B60025E54327000C1C90 /* LogOut */ = {
+			isa = PBXGroup;
+			children = (
+				D3C2B60225E54473000C1C90 /* LogOutRequestFactory.swift */,
+				D3C2B60425E5447D000C1C90 /* LogOut.swift */,
+			);
+			path = LogOut;
+			sourceTree = "<group>";
+		};
+		D3C2B60125E54428000C1C90 /* ChangeUserData */ = {
+			isa = PBXGroup;
+			children = (
+				D3C2B60625E5449D000C1C90 /* ChangeUserDataRequestFactory.swift */,
+				D3C2B60825E544A6000C1C90 /* ChangeUserData.swift */,
+			);
+			path = ChangeUserData;
 			sourceTree = "<group>";
 		};
 		F1A91C3B87F6DDD66F97D46B /* Frameworks */ = {
@@ -539,6 +576,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3C2B60925E544A6000C1C90 /* ChangeUserData.swift in Sources */,
+				D3C2B60325E54473000C1C90 /* LogOutRequestFactory.swift in Sources */,
+				D3C2B60B25E55074000C1C90 /* LogOutResult.swift in Sources */,
 				D36879F525DC014A00E6829D /* LoginResult.swift in Sources */,
 				D36879F125DC013D00E6829D /* AuthRequestFactory.swift in Sources */,
 				D36879EA25DC012800E6829D /* RequestRouter.swift in Sources */,
@@ -549,8 +589,12 @@
 				D36879F925DC0A2400E6829D /* SignUpRequestFactory.swift in Sources */,
 				D36879E825DC012800E6829D /* AbstractErrorParser.swift in Sources */,
 				D36879E925DC012800E6829D /* ErrorParser.swift in Sources */,
+				D3C2B60525E5447D000C1C90 /* LogOut.swift in Sources */,
+				D3C2B60F25E557C4000C1C90 /* SignUpResult.swift in Sources */,
 				D36879F025DC013D00E6829D /* RequestFactory.swift in Sources */,
+				D3C2B60725E5449D000C1C90 /* ChangeUserDataRequestFactory.swift in Sources */,
 				D36879F425DC014A00E6829D /* User.swift in Sources */,
+				D3C2B60D25E5508A000C1C90 /* ChangeUserDataResult.swift in Sources */,
 				D3418E4D25D2CC65004305A9 /* AppDelegate.swift in Sources */,
 				D3418E4F25D2CC65004305A9 /* SceneDelegate.swift in Sources */,
 				D36879EF25DC013D00E6829D /* Auth.swift in Sources */,

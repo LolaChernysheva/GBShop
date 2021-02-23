@@ -1,23 +1,22 @@
 //
-//  SignUpRequestFactory.swift
+//  ChangeUserDataRequestFactory.swift
 //  GBShop
 //
-//  Created by Лолита on 16.02.2021.
+//  Created by Лолита on 23.02.2021.
 //  Copyright © 2021 Lolita Chernysheva. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-protocol SignUpRequestFactory {
-    func signUp(id: String,
+protocol ChangeUserDataRequestFactory {
+    func changeUserData(id: String,
                 username: String,
                 password: String,
                 email: String,
                 gender: String,
                 creditCard: String,
                 bio: String,
-                completionHandler: @escaping (AFDataResponse<SignUpResult>) -> Void
+                completionHandler: @escaping (AFDataResponse<ChangeUserDataResult>) -> Void
     )
 }
-
