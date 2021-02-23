@@ -1,15 +1,16 @@
 //
-//  Auth.swift
+//  ProductList.swift
 //  GBShop
 //
-//  Created by Лолита on 16.02.2021.
+//  Created by Лолита on 23.02.2021.
 //  Copyright © 2021 Lolita Chernysheva. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-class Auth: AbstractRequestFactory {
+class ProductList: AbstractRequestFactory {
+    
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
@@ -27,27 +28,31 @@ class Auth: AbstractRequestFactory {
     }
 }
 
-extension Auth: AuthRequestFactory {
-    func login(userName: String, password: String, completionHandler: @escaping (AFDataResponse<LoginResult>) -> Void) {
-        let requestModel = Login(baseUrl: baseUrl, login: userName, password: password)
+extension ProductList: ProductListRequestFactory {
+    
+    func productList(pageNumber: String,
+                     idCategory: String,
+                     completionHandler: @escaping (AFDataResponse<[Product]>) -> Void) {
+        let requestModel = ProductListRequest(baseUrl: baseUrl, pageNumber: pageNumber , idCategory: idCategory)
         self.request(request: requestModel, completionHandler: completionHandler)
     }
 }
 
-extension Auth {
-    struct Login: RequestRouter {
+extension ProductList {
+    struct ProductListRequest: RequestRouter{
+        
         let baseUrl: URL
         let method: HTTPMethod = .get
-        let path: String = "login.json"
+        let path: String = "catalogData.json"
         
-        let login: String
-        let password: String
+        let pageNumber: String
+        let idCategory: String
+        
         var parameters: Parameters? {
-            return [
-                "username": login,
-                "password": password
-            ]
+        return [
+            "page_number": pageNumber,
+            "id_category": idCategory
+        ]
         }
     }
 }
-
