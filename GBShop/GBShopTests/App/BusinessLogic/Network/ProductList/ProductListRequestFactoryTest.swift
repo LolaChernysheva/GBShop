@@ -10,10 +10,11 @@ import XCTest
 import Alamofire
 @testable import GBShop
 
+
 class ProductListRequestFactoryTest: XCTestCase {
 
     func testProductListRequest() throws {
-        let requestFactory = RequestFactory(baseUrl: URL(string:"https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!)
+        let requestFactory = RequestFactory(baseUrl: URL(string:"http://127.0.0.1:8080")!)
         let expect = expectation(description: "product list")
         let productListFactory = requestFactory.makeProductListRequestFactory()
         productListFactory.productList(pageNumber: "1", idCategory: "1") {response in
@@ -30,7 +31,7 @@ class ProductListRequestFactoryTest: XCTestCase {
                 XCTFail(error.localizedDescription)
             }
         }
-        waitForExpectations(timeout: 10)
+        waitForExpectations(timeout: 3)
     }
 
     func testFailureProductListRequest() throws {
@@ -45,7 +46,7 @@ class ProductListRequestFactoryTest: XCTestCase {
                 expect.fulfill() //important
             }
         }
-        waitForExpectations(timeout: 10)
+        waitForExpectations(timeout: 3)
     }
 
 }

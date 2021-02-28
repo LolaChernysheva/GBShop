@@ -13,10 +13,10 @@ import Alamofire
 class SignUpRequestFactoryTest: XCTestCase {
 
     func testSignUpRequest() throws {
-        let requestFactory = RequestFactory(baseUrl: URL(string:"https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!)
+        let requestFactory = RequestFactory(baseUrl: URL(string:"http://127.0.0.1:8080")!)
         let expect = expectation(description: "signed up") //important
         let signUpFactory = requestFactory.makeSignUpRequestFatory()
-        signUpFactory.signUp(id: "1", username: "Test", password: "Testov", email: "a@b.com", gender: "m", creditCard: "123", bio: "Fake") {response in
+        signUpFactory.signUp(id: "123", username: "Test", password: "Testov", email: "a@b.com", gender: "m", creditCard: "123", bio: "Fake") {response in
             switch response.result {
             case .success(let model):
                 XCTAssertEqual(model.result, 1)
