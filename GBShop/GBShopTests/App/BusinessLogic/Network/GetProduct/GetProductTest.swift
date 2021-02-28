@@ -10,13 +10,14 @@ import XCTest
 import Alamofire
 @testable import GBShop
 
+
 class GetProductTest: XCTestCase {
 
     func testGetProductRequest() throws {
-           let requestFactory = RequestFactory(baseUrl: URL(string:"https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!)
+           let requestFactory = RequestFactory(baseUrl: URL(string:"http://127.0.0.1:8080")!)
            let expect = expectation(description: "product list")
            let getProductFactory = requestFactory.makeGetProductRequestFactory()
-           getProductFactory.getProduct(idProduct: 123) {response in
+           getProductFactory.getProduct(idProduct: 1234) {response in
                switch response.result {
                case .success(let model):
                    XCTAssertEqual(model.result, 1)
@@ -28,7 +29,7 @@ class GetProductTest: XCTestCase {
                    XCTFail(error.localizedDescription)
                }
            }
-           waitForExpectations(timeout: 20)
+           waitForExpectations(timeout: 3)
        }
 
        func testFailureGetProductRequest() throws {

@@ -13,7 +13,7 @@ import Alamofire
 class LogOutRequestFactoryTest: XCTestCase {
 
     func testLogOutRequest() throws {
-        let requestFactory = RequestFactory(baseUrl: URL(string:"https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!)
+        let requestFactory = RequestFactory(baseUrl: URL(string:"http://127.0.0.1:8080")!)
         let expect = expectation(description: "logged out") //important
         let logOutFactory = requestFactory.makeLogOutRequestFactory()
         logOutFactory.logOut(id:"123") {response

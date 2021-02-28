@@ -43,7 +43,7 @@ extension ProductList {
         
         let baseUrl: URL
         let method: HTTPMethod = .get
-        let path: String = "catalogData.json"
+        let path: String = "getProductList"
         
         let pageNumber: String
         let idCategory: String
