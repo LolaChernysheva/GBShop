@@ -10,11 +10,11 @@ import XCTest
 import Alamofire
 @testable import GBShop
 
-
 class ProductListRequestFactoryTest: XCTestCase {
 
     func testProductListRequest() throws {
-        let requestFactory = RequestFactory(baseUrl: URL(string:"http://127.0.0.1:8080")!)
+        guard let baseUrl = URL(string: "http://127.0.0.1:8080") else { return }
+        let requestFactory = RequestFactory(baseUrl: baseUrl)
         let expect = expectation(description: "product list")
         let productListFactory = requestFactory.makeProductListRequestFactory()
         productListFactory.productList(pageNumber: "1", idCategory: "1") {response in
@@ -35,15 +35,16 @@ class ProductListRequestFactoryTest: XCTestCase {
     }
 
     func testFailureProductListRequest() throws {
-        let requestFactory = RequestFactory(baseUrl: URL(string:"Pppppppp")!)
+        guard let baseUrl = URL(string: "Pppppppp") else { return }
+        let requestFactory = RequestFactory(baseUrl: baseUrl)
         let expect = expectation(description: "product list")
         let productListFactory = requestFactory.makeProductListRequestFactory()
         productListFactory.productList(pageNumber: "1", idCategory: "1") {response in
             switch response.result {
             case .success(let model):
-                 XCTFail("Must have failed \(model)")//important
+                 XCTFail("Must have failed \(model)")// important
             case .failure:
-                expect.fulfill() //important
+                expect.fulfill() // important
             }
         }
         waitForExpectations(timeout: 3)

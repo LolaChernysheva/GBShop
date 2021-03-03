@@ -10,14 +10,10 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    let requestFactory = RequestFactory()
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
-        [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        return true
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        true
     }
 
 }
-

@@ -14,12 +14,13 @@ class SignUp: AbstractRequestFactory {
     let sessionManager: Session
     let queue: DispatchQueue
     let baseUrl: URL
-    
+
     init(
     errorParser: AbstractErrorParser,
     sessionManager: Session,
     queue: DispatchQueue = DispatchQueue.global(qos: .utility),
-    baseUrl: URL) {
+    baseUrl: URL
+    ) {
         self.errorParser = errorParser
         self.sessionManager = sessionManager
         self.queue = queue
@@ -28,12 +29,19 @@ class SignUp: AbstractRequestFactory {
 }
 
 extension SignUp: SignUpRequestFactory {
-    func signUp(id: String, username: String, password: String, email: String, gender: String, creditCard: String, bio: String, completionHandler: @escaping (AFDataResponse<SignUpResult>) -> Void) {
+    func signUp(signUpRequestFactoryModel: SignUpRequestFactoryModel, completionHandler: @escaping (AFDataResponse<SignUpResult>) -> Void) {
         let requestModel = SignUpRequest(
-            baseUrl: baseUrl, id: id, username: username, password: password, email: email, gender: gender, creditCard: creditCard, bio: bio
+            baseUrl: baseUrl,
+            id: signUpRequestFactoryModel.id,
+            username: signUpRequestFactoryModel.username,
+            password: signUpRequestFactoryModel.password,
+            email: signUpRequestFactoryModel.email,
+            gender: signUpRequestFactoryModel.gender,
+            creditCard: signUpRequestFactoryModel.creditCard,
+            bio: signUpRequestFactoryModel.bio
         )
         self.request(request: requestModel, completionHandler: completionHandler)
-        
+
     }
 }
 
@@ -42,7 +50,7 @@ extension SignUp {
         let baseUrl: URL
         let method: HTTPMethod = .post
         let path: String = "register"
-        
+
         let id: String
         let username: String
         let password: String
@@ -50,9 +58,9 @@ extension SignUp {
         let gender: String
         let creditCard: String
         let bio: String
-        
+
         var parameters: Parameters? {
-            return [
+            [
                 "id_user": id,
                 "username": username,
                 "password": password,
@@ -64,4 +72,3 @@ extension SignUp {
         }
     }
 }
-

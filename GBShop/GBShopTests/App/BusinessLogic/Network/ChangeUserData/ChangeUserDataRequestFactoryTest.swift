@@ -11,40 +11,51 @@ import Alamofire
 @testable import GBShop
 
 class ChangeUserDataRequestFactoryTest: XCTestCase {
-
     func testChangeUserDataRequest() throws {
-        let requestFactory = RequestFactory(baseUrl: URL(string:"http://127.0.0.1:8080")!)
-        let expect = expectation(description: "User Data changed") //important
+        guard let baseUrl = URL(string: "http://127.0.0.1:8080") else { return }
+        let requestFactory = RequestFactory(baseUrl: baseUrl)
+        let expect = expectation(description: "User Data changed") // important
         let changeUserDataFactory = requestFactory.makeChangeUserDataRequestFactory()
-        changeUserDataFactory.changeUserData(id: "123", username: "Somebody", password: "mypassword", email: "some@some.ru", gender: "m", creditCard: "9872389-2424-234224-234", bio: "This is good! I think I will switch to another language") {response
+        let myTestModel = ChangeUserDataRequestFactoryModel(id: "123",
+                                                            username: "Somebody",
+                                                            password: "mypassword",
+                                                            email: "some@some.ru",
+                                                            gender: "m",
+                                                            creditCard: "9872389-2424-234224-234",
+                                                            bio: "This is good! I think I will switch to another language")
+        changeUserDataFactory.changeUserData(changeUserDataRequestFactoryModel: myTestModel) {response
             in
             switch response.result {
             case .success(let model):
                 XCTAssertEqual(model.result, 1)
-                
                 expect.fulfill()
             case .failure(let error):
-                XCTFail(error.localizedDescription)//important
+                XCTFail(error.localizedDescription)// important
             }
         }
-        waitForExpectations(timeout: 5)//important
+        waitForExpectations(timeout: 5)// important
     }
-    
     func testFailureChangeUserDataRequest() throws {
-        let requestFactory = RequestFactory(baseUrl: URL(string:"Leonard")!)
-        let expect = expectation(description: "User Data changed") //important
+        guard  let baseUrl = URL(string: "Leonard") else { return }
+        let requestFactory = RequestFactory(baseUrl: baseUrl)
+        let expect = expectation(description: "User Data changed") // important
         let changeUserDataFactory = requestFactory.makeChangeUserDataRequestFactory()
-        changeUserDataFactory.changeUserData(id: "123", username: "Somebody", password: "mypassword", email: "some@some.ru", gender: "m", creditCard: "9872389-2424-234224-234", bio: "This is good! I think I will switch to another language") {response
+        let myTestModel = ChangeUserDataRequestFactoryModel(id: "123",
+                                                            username: "Somebody",
+                                                            password: "mypassword",
+                                                            email: "some@some.ru",
+                                                            gender: "m",
+                                                            creditCard: "9872389-2424-234224-234",
+                                                            bio: "This is good! I think I will switch to another language")
+        changeUserDataFactory.changeUserData(changeUserDataRequestFactoryModel: myTestModel) {response
             in
             switch response.result {
             case .success(let model):
-                XCTFail("Must have failed \(model)")//important
+                XCTFail("Must have failed \(model)")// important
             case .failure:
-                expect.fulfill() //important
-               
+                expect.fulfill() // important
             }
         }
-        waitForExpectations(timeout: 5)//important
+        waitForExpectations(timeout: 5)// important
     }
-
 }

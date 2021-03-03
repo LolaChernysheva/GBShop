@@ -14,12 +14,12 @@ class GetProduct: AbstractRequestFactory {
     let sessionManager: Session
     let queue: DispatchQueue
     let baseUrl: URL
-    
     init(
-    errorParser: AbstractErrorParser,
-    sessionManager: Session,
-    queue: DispatchQueue = DispatchQueue.global(qos: .utility),
-    baseUrl: URL) {
+        errorParser: AbstractErrorParser,
+        sessionManager: Session,
+        queue: DispatchQueue = DispatchQueue.global(qos: .utility),
+        baseUrl: URL
+    ) {
         self.errorParser = errorParser
         self.sessionManager = sessionManager
         self.queue = queue
@@ -28,8 +28,10 @@ class GetProduct: AbstractRequestFactory {
 }
 
 extension GetProduct: GetProductRequestFactory {
-    func getProduct (idProduct: Int,
-                     completionHandler: @escaping (AFDataResponse<GetProductResult>) -> Void) {
+    func getProduct (
+        idProduct: Int,
+        completionHandler: @escaping (AFDataResponse<GetProductResult>) -> Void
+    ) {
         let requestModel = GetProductRequest(baseUrl: baseUrl, idProduct: idProduct)
         self.request(request: requestModel, completionHandler: completionHandler)
     }
@@ -40,12 +42,11 @@ extension GetProduct {
         let baseUrl: URL
         let method: HTTPMethod = .get
         let path: String = "getProduct"
-        
         let idProduct: Int
         var parameters: Parameters? {
-        return [
-            "id_product": idProduct
-        ]
+            [
+                "id_product": idProduct
+            ]
         }
     }
 }

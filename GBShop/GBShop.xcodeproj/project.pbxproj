@@ -48,6 +48,18 @@
 		D3C2B62E25E5928F000C1C90 /* GetProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2B62D25E5928F000C1C90 /* GetProduct.swift */; };
 		D3C2B63025E592AF000C1C90 /* GetProductRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2B62F25E592AF000C1C90 /* GetProductRequestFactory.swift */; };
 		D3C2B63225E59519000C1C90 /* GetProductResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2B63125E59519000C1C90 /* GetProductResult.swift */; };
+		D3C2B63525ED6A38000C1C90 /* RemoveReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2B63425ED6A38000C1C90 /* RemoveReview.swift */; };
+		D3C2B63725ED6A51000C1C90 /* RemoveReviewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2B63625ED6A51000C1C90 /* RemoveReviewFactory.swift */; };
+		D3C2B63925ED6AF7000C1C90 /* RemoveReviewResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2B63825ED6AF7000C1C90 /* RemoveReviewResult.swift */; };
+		D3C2B63C25ED6F37000C1C90 /* RemoveReviewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2B63B25ED6F37000C1C90 /* RemoveReviewTest.swift */; };
+		D3C2B63F25EE5BB1000C1C90 /* AddReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2B63E25EE5BB1000C1C90 /* AddReview.swift */; };
+		D3C2B64125EE5BC5000C1C90 /* AddReviewRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2B64025EE5BC5000C1C90 /* AddReviewRequestFactory.swift */; };
+		D3C2B64325EE5BDD000C1C90 /* AddReviewResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2B64225EE5BDD000C1C90 /* AddReviewResult.swift */; };
+		D3C2B64625EE5EED000C1C90 /* AddReviewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2B64525EE5EED000C1C90 /* AddReviewTest.swift */; };
+		D3C2B64925EE7322000C1C90 /* GetReviewsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2B64825EE7322000C1C90 /* GetReviewsList.swift */; };
+		D3C2B64B25EE73FE000C1C90 /* GetReviewsListRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2B64A25EE73FE000C1C90 /* GetReviewsListRequestFactory.swift */; };
+		D3C2B64D25EE75B8000C1C90 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2B64C25EE75B8000C1C90 /* Reviews.swift */; };
+		D3C2B65025EE78D2000C1C90 /* GetReviewsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2B64F25EE78D2000C1C90 /* GetReviewsList.swift */; };
 		D7B7A106F718A4FB1B4E921B /* Pods_GBShop_GBShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5073B609BD627246ABA27D5 /* Pods_GBShop_GBShopUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +134,18 @@
 		D3C2B62D25E5928F000C1C90 /* GetProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProduct.swift; sourceTree = "<group>"; };
 		D3C2B62F25E592AF000C1C90 /* GetProductRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProductRequestFactory.swift; sourceTree = "<group>"; };
 		D3C2B63125E59519000C1C90 /* GetProductResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProductResult.swift; sourceTree = "<group>"; };
+		D3C2B63425ED6A38000C1C90 /* RemoveReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveReview.swift; sourceTree = "<group>"; };
+		D3C2B63625ED6A51000C1C90 /* RemoveReviewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveReviewFactory.swift; sourceTree = "<group>"; };
+		D3C2B63825ED6AF7000C1C90 /* RemoveReviewResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveReviewResult.swift; sourceTree = "<group>"; };
+		D3C2B63B25ED6F37000C1C90 /* RemoveReviewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveReviewTest.swift; sourceTree = "<group>"; };
+		D3C2B63E25EE5BB1000C1C90 /* AddReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReview.swift; sourceTree = "<group>"; };
+		D3C2B64025EE5BC5000C1C90 /* AddReviewRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewRequestFactory.swift; sourceTree = "<group>"; };
+		D3C2B64225EE5BDD000C1C90 /* AddReviewResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewResult.swift; sourceTree = "<group>"; };
+		D3C2B64525EE5EED000C1C90 /* AddReviewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewTest.swift; sourceTree = "<group>"; };
+		D3C2B64825EE7322000C1C90 /* GetReviewsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReviewsList.swift; sourceTree = "<group>"; };
+		D3C2B64A25EE73FE000C1C90 /* GetReviewsListRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReviewsListRequestFactory.swift; sourceTree = "<group>"; };
+		D3C2B64C25EE75B8000C1C90 /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
+		D3C2B64F25EE78D2000C1C90 /* GetReviewsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReviewsList.swift; sourceTree = "<group>"; };
 		E3C990D38C45C5BD6556E952 /* Pods-GBShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShop.release.xcconfig"; path = "Target Support Files/Pods-GBShop/Pods-GBShop.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -268,6 +292,9 @@
 				D3C2B60E25E557C4000C1C90 /* SignUpResult.swift */,
 				D3C2B62725E58823000C1C90 /* Product.swift */,
 				D3C2B63125E59519000C1C90 /* GetProductResult.swift */,
+				D3C2B63825ED6AF7000C1C90 /* RemoveReviewResult.swift */,
+				D3C2B64225EE5BDD000C1C90 /* AddReviewResult.swift */,
+				D3C2B64C25EE75B8000C1C90 /* Reviews.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -309,6 +336,9 @@
 		D36879EB25DC013D00E6829D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				D3C2B64725EE72C5000C1C90 /* GetReviewsList */,
+				D3C2B63D25EE5B84000C1C90 /* AddReview */,
+				D3C2B63325ED69F8000C1C90 /* RemoveReview */,
 				D3C2B62C25E59274000C1C90 /* GetProduct */,
 				D3C2B61F25E57FF8000C1C90 /* ProductList */,
 				D3C2B60125E54428000C1C90 /* ChangeUserData */,
@@ -367,6 +397,9 @@
 		D3C2B61125E560DA000C1C90 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				D3C2B64E25EE78A6000C1C90 /* ReviewsList */,
+				D3C2B64425EE5ED5000C1C90 /* AddReview */,
+				D3C2B63A25ED6EFF000C1C90 /* RemoveReview */,
 				D3C2B62925E58FE7000C1C90 /* GetProduct */,
 				D3C2B62425E58065000C1C90 /* ProductList */,
 				D3C2B61C25E56E98000C1C90 /* SignUp */,
@@ -451,6 +484,57 @@
 			path = GetProduct;
 			sourceTree = "<group>";
 		};
+		D3C2B63325ED69F8000C1C90 /* RemoveReview */ = {
+			isa = PBXGroup;
+			children = (
+				D3C2B63425ED6A38000C1C90 /* RemoveReview.swift */,
+				D3C2B63625ED6A51000C1C90 /* RemoveReviewFactory.swift */,
+			);
+			path = RemoveReview;
+			sourceTree = "<group>";
+		};
+		D3C2B63A25ED6EFF000C1C90 /* RemoveReview */ = {
+			isa = PBXGroup;
+			children = (
+				D3C2B63B25ED6F37000C1C90 /* RemoveReviewTest.swift */,
+			);
+			path = RemoveReview;
+			sourceTree = "<group>";
+		};
+		D3C2B63D25EE5B84000C1C90 /* AddReview */ = {
+			isa = PBXGroup;
+			children = (
+				D3C2B63E25EE5BB1000C1C90 /* AddReview.swift */,
+				D3C2B64025EE5BC5000C1C90 /* AddReviewRequestFactory.swift */,
+			);
+			path = AddReview;
+			sourceTree = "<group>";
+		};
+		D3C2B64425EE5ED5000C1C90 /* AddReview */ = {
+			isa = PBXGroup;
+			children = (
+				D3C2B64525EE5EED000C1C90 /* AddReviewTest.swift */,
+			);
+			path = AddReview;
+			sourceTree = "<group>";
+		};
+		D3C2B64725EE72C5000C1C90 /* GetReviewsList */ = {
+			isa = PBXGroup;
+			children = (
+				D3C2B64825EE7322000C1C90 /* GetReviewsList.swift */,
+				D3C2B64A25EE73FE000C1C90 /* GetReviewsListRequestFactory.swift */,
+			);
+			path = GetReviewsList;
+			sourceTree = "<group>";
+		};
+		D3C2B64E25EE78A6000C1C90 /* ReviewsList */ = {
+			isa = PBXGroup;
+			children = (
+				D3C2B64F25EE78D2000C1C90 /* GetReviewsList.swift */,
+			);
+			path = ReviewsList;
+			sourceTree = "<group>";
+		};
 		F1A91C3B87F6DDD66F97D46B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -469,6 +553,7 @@
 			buildConfigurationList = D3418E7325D2CC6D004305A9 /* Build configuration list for PBXNativeTarget "GBShop" */;
 			buildPhases = (
 				87595721DBB543BAC9476C0E /* [CP] Check Pods Manifest.lock */,
+				D3C2B65125EE8E14000C1C90 /* ShellScript */,
 				D3418E4525D2CC65004305A9 /* Sources */,
 				D3418E4625D2CC65004305A9 /* Frameworks */,
 				D3418E4725D2CC65004305A9 /* Resources */,
@@ -693,6 +778,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D3C2B65125EE8E14000C1C90 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -703,14 +805,23 @@
 				D3C2B60925E544A6000C1C90 /* ChangeUserData.swift in Sources */,
 				D3C2B60325E54473000C1C90 /* LogOutRequestFactory.swift in Sources */,
 				D3C2B60B25E55074000C1C90 /* LogOutResult.swift in Sources */,
+				D3C2B64125EE5BC5000C1C90 /* AddReviewRequestFactory.swift in Sources */,
+				D3C2B64325EE5BDD000C1C90 /* AddReviewResult.swift in Sources */,
 				D3C2B63025E592AF000C1C90 /* GetProductRequestFactory.swift in Sources */,
+				D3C2B63725ED6A51000C1C90 /* RemoveReviewFactory.swift in Sources */,
+				D3C2B63F25EE5BB1000C1C90 /* AddReview.swift in Sources */,
 				D36879F525DC014A00E6829D /* LoginResult.swift in Sources */,
 				D36879F125DC013D00E6829D /* AuthRequestFactory.swift in Sources */,
 				D36879EA25DC012800E6829D /* RequestRouter.swift in Sources */,
+				D3C2B64B25EE73FE000C1C90 /* GetReviewsListRequestFactory.swift in Sources */,
+				D3C2B63925ED6AF7000C1C90 /* RemoveReviewResult.swift in Sources */,
+				D3C2B63525ED6A38000C1C90 /* RemoveReview.swift in Sources */,
+				D3C2B64D25EE75B8000C1C90 /* Reviews.swift in Sources */,
 				D3C2B62E25E5928F000C1C90 /* GetProduct.swift in Sources */,
 				D36879E725DC012800E6829D /* AbstractRequestFactory.swift in Sources */,
 				D3C2B63225E59519000C1C90 /* GetProductResult.swift in Sources */,
 				D36879FB25DC0A3500E6829D /* SignUp.swift in Sources */,
+				D3C2B64925EE7322000C1C90 /* GetReviewsList.swift in Sources */,
 				D3418E5125D2CC65004305A9 /* ViewController.swift in Sources */,
 				D3C2B62325E5803F000C1C90 /* ProductList.swift in Sources */,
 				D36879E625DC012800E6829D /* ResponseCodable.swift in Sources */,
@@ -736,6 +847,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3C2B61B25E56C20000C1C90 /* LogOutRequestFactoryTest.swift in Sources */,
+				D3C2B64625EE5EED000C1C90 /* AddReviewTest.swift in Sources */,
+				D3C2B65025EE78D2000C1C90 /* GetReviewsList.swift in Sources */,
+				D3C2B63C25ED6F37000C1C90 /* RemoveReviewTest.swift in Sources */,
 				D3C2B61825E567DD000C1C90 /* ChangeUserDataRequestFactoryTest.swift in Sources */,
 				D3C2B62625E58090000C1C90 /* ProductListRequestFactoryTest.swift in Sources */,
 				D3C2B61E25E56EAB000C1C90 /* SignUpRequestFactoryTest.swift in Sources */,

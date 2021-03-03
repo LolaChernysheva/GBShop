@@ -9,15 +9,19 @@
 import Foundation
 import Alamofire
 
-protocol SignUpRequestFactory {
-    func signUp(id: String,
-                username: String,
-                password: String,
-                email: String,
-                gender: String,
-                creditCard: String,
-                bio: String,
-                completionHandler: @escaping (AFDataResponse<SignUpResult>) -> Void
-    )
+struct SignUpRequestFactoryModel {
+    var id: String
+    var username: String
+    var password: String
+    var email: String
+    var gender: String
+    var creditCard: String
+    var bio: String
 }
 
+protocol SignUpRequestFactory {
+    func signUp(
+        signUpRequestFactoryModel: SignUpRequestFactoryModel,
+        completionHandler: @escaping (AFDataResponse<SignUpResult>) -> Void
+    )
+}

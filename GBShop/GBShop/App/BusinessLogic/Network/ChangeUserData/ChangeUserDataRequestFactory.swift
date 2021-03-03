@@ -9,14 +9,19 @@
 import Foundation
 import Alamofire
 
+struct ChangeUserDataRequestFactoryModel {
+    var id: String
+    var username: String
+    var password: String
+    var email: String
+    var gender: String
+    var creditCard: String
+    var bio: String
+}
+
 protocol ChangeUserDataRequestFactory {
-    func changeUserData(id: String,
-                username: String,
-                password: String,
-                email: String,
-                gender: String,
-                creditCard: String,
-                bio: String,
-                completionHandler: @escaping (AFDataResponse<ChangeUserDataResult>) -> Void
+    func changeUserData(
+        changeUserDataRequestFactoryModel: ChangeUserDataRequestFactoryModel,
+        completionHandler: @escaping (AFDataResponse<ChangeUserDataResult>) -> Void
     )
 }

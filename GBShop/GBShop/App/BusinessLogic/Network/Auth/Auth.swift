@@ -14,12 +14,13 @@ class Auth: AbstractRequestFactory {
     let sessionManager: Session
     let queue: DispatchQueue
     let baseUrl: URL
-    
+
     init(
     errorParser: AbstractErrorParser,
     sessionManager: Session,
     queue: DispatchQueue = DispatchQueue.global(qos: .utility),
-    baseUrl: URL) {
+    baseUrl: URL
+    ) {
         self.errorParser = errorParser
         self.sessionManager = sessionManager
         self.queue = queue
@@ -39,15 +40,14 @@ extension Auth {
         let baseUrl: URL
         let method: HTTPMethod = .post
         let path: String = "auth"
-        
+
         let login: String
         let password: String
         var parameters: Parameters? {
-            return [
+            [
                 "username": login,
                 "password": password
             ]
         }
     }
 }
-

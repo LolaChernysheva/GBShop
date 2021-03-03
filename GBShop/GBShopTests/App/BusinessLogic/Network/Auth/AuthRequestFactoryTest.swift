@@ -13,8 +13,9 @@ import Alamofire
 class AuthRequestFactoryTest: XCTestCase {
 
     func testLogin() throws {
-        let requestFactory = RequestFactory(baseUrl: URL(string:"http://127.0.0.1:8080")!)
-        let expect = expectation(description: "logged in") //important
+        guard let baseUrl = URL(string: "http://127.0.0.1:8080") else { return }
+        let requestFactory = RequestFactory(baseUrl: baseUrl)
+        let expect = expectation(description: "logged in") // important
         let authFactory = requestFactory.makeAuthRequestFatory()
         authFactory.login(userName: "Somebody", password: "mypassword") {response in
             switch response.result {
@@ -24,27 +25,28 @@ class AuthRequestFactoryTest: XCTestCase {
                 XCTAssertEqual(model.user.name, "John")
                 XCTAssertEqual(model.user.lastname, "Doe")
                 XCTAssertEqual(model.user.login, "geekbrains")
-                
-                expect.fulfill() //important
+
+                expect.fulfill() // important
             case .failure(let error):
-                XCTFail(error.localizedDescription)//important
+                XCTFail(error.localizedDescription)// important
             }
         }
-        waitForExpectations(timeout: 5)//important
+        waitForExpectations(timeout: 5)// important
     }
-    
+
     func testFailureLogin() throws {
-        let requestFactory = RequestFactory(baseUrl: URL(string:"SheldonCooper")!)
-        let expect = expectation(description: "logged in") //important
+        guard let baseUrl = URL(string: "SheldonCooper") else { return }
+        let requestFactory = RequestFactory(baseUrl: baseUrl)
+        let expect = expectation(description: "logged in") // important
         let authFactory = requestFactory.makeAuthRequestFatory()
         authFactory.login(userName: "Somebody", password: "mypassword") {response in
             switch response.result {
             case .success(let model):
-                 XCTFail("Must have failed \(model)")//important
+                 XCTFail("Must have failed \(model)")// important
             case .failure:
-                expect.fulfill() //important
+                expect.fulfill() // important
             }
         }
-        waitForExpectations(timeout: 5)//important
+        waitForExpectations(timeout: 5)// important
     }
 }

@@ -10,17 +10,16 @@ import Foundation
 import Alamofire
 
 class ProductList: AbstractRequestFactory {
-    
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
     let baseUrl: URL
-    
     init(
-    errorParser: AbstractErrorParser,
-    sessionManager: Session,
-    queue: DispatchQueue = DispatchQueue.global(qos: .utility),
-    baseUrl: URL) {
+        errorParser: AbstractErrorParser,
+        sessionManager: Session,
+        queue: DispatchQueue = DispatchQueue.global(qos: .utility),
+        baseUrl: URL
+    ) {
         self.errorParser = errorParser
         self.sessionManager = sessionManager
         self.queue = queue
@@ -29,30 +28,28 @@ class ProductList: AbstractRequestFactory {
 }
 
 extension ProductList: ProductListRequestFactory {
-    
-    func productList(pageNumber: String,
-                     idCategory: String,
-                     completionHandler: @escaping (AFDataResponse<[Product]>) -> Void) {
-        let requestModel = ProductListRequest(baseUrl: baseUrl, pageNumber: pageNumber , idCategory: idCategory)
+    func productList(
+        pageNumber: String,
+        idCategory: String,
+        completionHandler: @escaping (AFDataResponse<[Product]>) -> Void
+    ) {
+        let requestModel = ProductListRequest(baseUrl: baseUrl, pageNumber: pageNumber, idCategory: idCategory)
         self.request(request: requestModel, completionHandler: completionHandler)
     }
 }
 
 extension ProductList {
-    struct ProductListRequest: RequestRouter{
-        
+    struct ProductListRequest: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .get
         let path: String = "getProductList"
-        
         let pageNumber: String
         let idCategory: String
-        
         var parameters: Parameters? {
-        return [
-            "page_number": pageNumber,
-            "id_category": idCategory
-        ]
+            [
+                "page_number": pageNumber,
+                "id_category": idCategory
+            ]
         }
     }
 }

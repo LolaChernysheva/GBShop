@@ -11,38 +11,37 @@ import Alamofire
 @testable import GBShop
 
 class LogOutRequestFactoryTest: XCTestCase {
-
     func testLogOutRequest() throws {
-        let requestFactory = RequestFactory(baseUrl: URL(string:"http://127.0.0.1:8080")!)
-        let expect = expectation(description: "logged out") //important
+        guard let baseUrl = URL(string: "http://127.0.0.1:8080") else { return }
+        let requestFactory = RequestFactory(baseUrl: baseUrl)
+        let expect = expectation(description: "logged out") // important
         let logOutFactory = requestFactory.makeLogOutRequestFactory()
-        logOutFactory.logOut(id:"123") {response
+        logOutFactory.logOut(id: "123") {response
             in
             switch response.result {
             case .success(let model):
                 XCTAssertEqual(model.result, 1)
                 expect.fulfill()
             case .failure(let error):
-                XCTFail(error.localizedDescription)//important
+                XCTFail(error.localizedDescription)// important
             }
         }
-        waitForExpectations(timeout: 5)//important
+        waitForExpectations(timeout: 5)// important
     }
-    
     func testFailureLogOutRequest() throws {
-        let requestFactory = RequestFactory(baseUrl: URL(string:"Raj")!)
-        let expect = expectation(description: "logged out") //important
+        guard let baseUrl = URL(string: "Raj") else { return }
+        let requestFactory = RequestFactory(baseUrl: baseUrl)
+        let expect = expectation(description: "logged out") // important
         let logOutFactory = requestFactory.makeLogOutRequestFactory()
-        logOutFactory.logOut(id:"123") {response
+        logOutFactory.logOut(id: "123") {response
             in
-           switch response.result {
+            switch response.result {
             case .success(let model):
-                XCTFail("Must have failed \(model)")//important
+                XCTFail("Must have failed \(model)")// important
             case .failure:
-                expect.fulfill() //important
+                expect.fulfill() // important
             }
         }
-        waitForExpectations(timeout: 5)//important
+        waitForExpectations(timeout: 5)// important
     }
-
 }

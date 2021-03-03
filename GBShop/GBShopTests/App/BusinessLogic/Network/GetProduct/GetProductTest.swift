@@ -10,40 +10,39 @@ import XCTest
 import Alamofire
 @testable import GBShop
 
-
 class GetProductTest: XCTestCase {
-
     func testGetProductRequest() throws {
-           let requestFactory = RequestFactory(baseUrl: URL(string:"http://127.0.0.1:8080")!)
-           let expect = expectation(description: "product list")
-           let getProductFactory = requestFactory.makeGetProductRequestFactory()
-           getProductFactory.getProduct(idProduct: 1234) {response in
-               switch response.result {
-               case .success(let model):
-                   XCTAssertEqual(model.result, 1)
-                   XCTAssertEqual(model.productName, "Ноутбук")
-                   XCTAssertEqual(model.productPrice, 45600)
-                   XCTAssertEqual(model.productDescription, "Мощный игровой ноутбук")
-                   expect.fulfill()
-               case .failure(let error):
-                   XCTFail(error.localizedDescription)
-               }
-           }
-           waitForExpectations(timeout: 3)
-       }
-
-       func testFailureGetProductRequest() throws {
-            let requestFactory = RequestFactory(baseUrl: URL(string:"rtyu")!)
-            let expect = expectation(description: "product list")
-            let getProductFactory = requestFactory.makeGetProductRequestFactory()
-            getProductFactory.getProduct(idProduct: 123) {response in
-                switch response.result {
-                case .success(let model):
-                     XCTFail("Must have failed \(model)")//important
-                case .failure:
-                    expect.fulfill() //important
-                }
+        guard let baseUrl = URL(string: "http://127.0.0.1:8080") else { return }
+        let requestFactory = RequestFactory(baseUrl: baseUrl)
+        let expect = expectation(description: "product list")
+        let getProductFactory = requestFactory.makeGetProductRequestFactory()
+        getProductFactory.getProduct(idProduct: 1234) {response in
+            switch response.result {
+            case .success(let model):
+                XCTAssertEqual(model.result, 1)
+                XCTAssertEqual(model.productName, "Ноутбук")
+                XCTAssertEqual(model.productPrice, 45600)
+                XCTAssertEqual(model.productDescription, "Мощный игровой ноутбук")
+                expect.fulfill()
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
             }
-            waitForExpectations(timeout: 10)
-       }
+        }
+        waitForExpectations(timeout: 3)
+    }
+    func testFailureGetProductRequest() throws {
+        guard let baseUrl = URL(string: "rtyu") else { return }
+        let requestFactory = RequestFactory(baseUrl: baseUrl)
+        let expect = expectation(description: "product list")
+        let getProductFactory = requestFactory.makeGetProductRequestFactory()
+        getProductFactory.getProduct(idProduct: 123) {response in
+            switch response.result {
+            case .success(let model):
+                XCTFail("Must have failed \(model)")// important
+            case .failure:
+                expect.fulfill() // important
+            }
+        }
+        waitForExpectations(timeout: 10)
+    }
 }
