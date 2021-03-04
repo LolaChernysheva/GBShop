@@ -18,11 +18,16 @@ func routes(_ app: Application) throws {
     let productController = ProductController()
     app.get("getProduct", use: productController.getProduct)
     app.get("getProductList", use: productController.getProductList)
+    app.post("addToBasket", use: productController.addToBasket)
+    app.post("deleteFromBasket", use: productController.deleteFromBasket)
     
     let productReviewsController = ProductReviewsController()
     app.post("removeReview", use: productReviewsController.removeReview)
     app.post("addReview", use: productReviewsController.addReview)
     app.get("getReviewsList", use: productReviewsController.getReviewsList)
+    
+    let basketController = BasketController()
+    app.post("payBasket", use: basketController.payBasket)
     
     
     

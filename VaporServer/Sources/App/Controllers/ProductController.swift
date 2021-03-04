@@ -38,4 +38,24 @@ class ProductController {
         
     }
     
+    func addToBasket(_ req: Request) throws -> EventLoopFuture<AddToBasketResponse> {
+        guard let body = try? req.content.decode(AddToBasketRequest.self) else {
+          throw Abort(.badRequest)
+        }
+        
+        print(body)
+        
+        let response = AddToBasketResponse(result: 1)
+        return req.eventLoop.future(response)
+    }
+    
+    func deleteFromBasket(_ req: Request) throws -> EventLoopFuture<DeleteFromBasketResponse> {
+        guard let body = try? req.content.decode(DeleteFromBasketRequest.self) else {
+         throw Abort(.badRequest)
+        }
+        print(body)
+        
+        let response = DeleteFromBasketResponse(result: 1)
+        return req.eventLoop.future(response)
+    }
 }
