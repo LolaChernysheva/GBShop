@@ -37,6 +37,8 @@ opt_in_rules: # some rules are turned off by default, so you need to opt-in
   - contains_over_filter_count # Prefer contains over comparing filter(where:).count to 0.
   - closure_spacing # Closure expressions should have a single space inside each brace.
 
+disabled_rules:
+  - trailing_whitespace
 
 warning_threshold: 15
 
